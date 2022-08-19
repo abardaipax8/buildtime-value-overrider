@@ -25,3 +25,21 @@ jobs:
         with:
           filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
           keyValueObject: ${{ toJson(steps.run_outputs.outputs) }}
+
+
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      ENV_VAR: Hello Vars!
+      yaml.prop: !@#$%^&*()-=_+;':""',./<>?`~`
+      ENV_VAR2: Hello Vars!
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+    - name: Join key and values
+        id: json_map
+        env:
+          JSON: ${{ toJson(needs.job1.outputs) }}
+        run: echo $JSON
