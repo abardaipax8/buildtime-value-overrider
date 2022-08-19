@@ -6,6 +6,7 @@ on:
       addVar:
         required: false
         description: test var conditions
+        type: boolean
         default: false
   pull_request:
 
