@@ -1,0 +1,10 @@
+name: Another workflow to mock being called in backend workflows
+
+
+job3:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - env:
+          JSON: ${{ toJson(needs.job1.outputs) }}
+        run: echo $JSON
