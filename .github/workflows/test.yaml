@@ -30,4 +30,4 @@ jobs:
         uses: ./
         with:
           filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
-          keyValueObject: ${{ steps.run_outputs.outputs }}
+          keyValueObject: ${{ fromJson(steps.run_outputs.outputs) }}
