@@ -29,7 +29,7 @@ jobs:
     steps:
       - name: update p8p endpoint
         if: true
-        run: echo "::set-output name=ENV_VAR44::Hello Vars!"
+        run: echo "::set-output name=ENV_VAR::Change please!"
       - run: echo "Setting up Key-Val combinations"
 
   job2:
