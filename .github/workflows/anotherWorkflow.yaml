@@ -34,4 +34,4 @@ jobs:
         uses: ./
         with:
           filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
-          keyValueObject: ${{ toJson(needs.job1.outputs) }}
+          keyValueObject: ${{ toJson(github.event.inputs.keyValueObject) }}
