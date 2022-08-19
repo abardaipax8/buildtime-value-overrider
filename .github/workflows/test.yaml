@@ -1,14 +1,6 @@
 name: Test workflow
 
-on:
-  workflow_dispatch:
-    inputs:
-      addVar:
-        required: false
-        description: test var conditions
-        type: boolean
-        default: false
-  pull_request:
+on: [workflow_dispatch, pull_request]
 
 jobs:
   job1:
@@ -18,7 +10,7 @@ jobs:
       yaml.prop: '///\\\--__...[]=()'
     steps:
       - name: add env var
-        if: ${{ github.event.inputs.addVar }}
+        if: false
         id: env_var
         run: echo "::set-output name=ENV_VAR::Change again!"
 
