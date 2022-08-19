@@ -23,7 +23,7 @@ jobs:
 
   job2:
     runs-on: ubuntu-latest
-    uses: abardaipax8/buildtime-value-overrider/.github/workflows/anotherWorkflow.yml@test-pr
+    uses: ./.github/workflows/anotherWorkflow.yaml
     needs: job1
     with:
       filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
