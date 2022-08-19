@@ -11,7 +11,6 @@ jobs:
       - name: Create value outputs
         id: run_outputs
         run: |
-          if 
           echo "::set-output name=ENV_VAR::Hello Vars!"
           echo "::set-output name=yaml.prop::!@#$%^&*()-=_+;':""',./<>?`~`"
           echo "::set-output name=ENV_VAR2::Hello Vars!"
