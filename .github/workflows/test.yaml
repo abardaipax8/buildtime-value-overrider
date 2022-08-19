@@ -33,6 +33,8 @@ jobs:
       ENV_VAR: Hello Vars!
       yaml.prop: ${{ !@#$%^&*()-=_+;':""',./<>?`~` }}
       ENV_VAR2: Hello Vars!
+    steps:
+      - run: echo "Setting up Key-Val combinations"
 
   job2:
     runs-on: ubuntu-latest
