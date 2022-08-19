@@ -1,0 +1,15 @@
+name: 'Build time value overrider'
+description: 'Overrides values in YAML and env files at build time'
+author: 'Pax8'
+inputs:
+  filePath:
+    required: false
+    description: 'Path of YAML or env file to override'
+    default: ''
+  keyValueObject:
+    required: false
+    description: 'Object of existing keys and values to override existing values'
+    default: ''
+runs:
+  using: 'node16'
+  main: 'src/index.js'
