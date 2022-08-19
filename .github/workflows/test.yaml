@@ -24,7 +24,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     outputs:
-      ENV_VAR: ${{ steps.single_test.outputs }}
+      ENV_VAR: ${{ steps.single_test.outputs.ENV_VAR }}
       yaml.prop: '///\\\--__...[]=()'
     steps:
       - name: update p8p endpoint
