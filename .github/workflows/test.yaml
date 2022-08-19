@@ -24,11 +24,12 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     outputs:
-      ENV_VAR: Hello Vars!
+      ENV_VAR: ${{ steps.single_test.outputs }}
       yaml.prop: '///\\\--__...[]=()'
     steps:
       - name: update p8p endpoint
         if: true
+        id: single_test
         run: echo "::set-output name=ENV_VAR::Change please!"
       - run: echo "Setting up Key-Val combinations"
 
