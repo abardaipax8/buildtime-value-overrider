@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     outputs:
-      keyValues: ${{ fromJson(steps.run_outputs.outputs) }}
+      keyValues: ${{ toJson(steps.run_outputs.outputs) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
