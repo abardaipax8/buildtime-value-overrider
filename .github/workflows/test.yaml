@@ -43,6 +43,6 @@ jobs:
     needs: test
     steps:
     - name: Join key and values
-      env:
-        JSON: ${{ toJson(needs.test.outputs.keyValues) }}
-      run: echo $JSON
+      # env:
+      #   JSON: ${{ toJson() }}
+      run: echo ${{ needs.test.outputs.keyValues }}
