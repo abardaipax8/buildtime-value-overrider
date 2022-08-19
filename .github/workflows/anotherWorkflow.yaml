@@ -15,13 +15,13 @@ on:
 jobs:
   job3:
     runs-on: ubuntu-latest
-    if: false
+    if: true
     steps:
       - name: input file path
-        run: echo ${{ github.event.inputs.filePath }}
+        run: echo ${{ inputs.filePath }}
 
       - name: input key val map
-        run: echo ${{ github.event.inputs.keyValueObject }}
+        run: echo ${{ inputs.keyValueObject }}
   
   job4:
     runs-on: ubuntu-latest
@@ -34,4 +34,4 @@ jobs:
         uses: ./
         with:
           filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
-          keyValueObject: ${{ toJson(github.event.inputs.keyValueObject) }}
+          keyValueObject: ${{ toJson(inputs.keyValueObject) }}
