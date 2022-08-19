@@ -15,7 +15,7 @@ on:
 jobs:
   job3:
     runs-on: ubuntu-latest
-    if: true
+    if: false
     steps:
       - name: input file path
         run: echo ${{ github.event.inputs.filePath }}
@@ -25,7 +25,7 @@ jobs:
   
   job4:
     runs-on: ubuntu-latest
-    if: false
+    if: true
     steps:
       - name: Checkout
         uses: actions/checkout@v3
