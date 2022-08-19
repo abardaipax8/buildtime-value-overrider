@@ -39,7 +39,7 @@ jobs:
     needs: job1
     steps:
     - name: Join key and values
-        id: json_map
-        env:
-          JSON: ${{ toJson(needs.job1.outputs) }}
-        run: echo $JSON
+      id: json_map
+      env:
+        JSON: ${{ toJson(needs.job1.outputs) }}
+      run: echo $JSON
