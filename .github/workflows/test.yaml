@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       ENV_VAR: Hello Vars!
-      yaml.prop: ${{ ///\\\--__...[]=() }}
+      yaml.prop: '///\\\--__...[]=()'
       ENV_VAR2: Hello Vars!
     steps:
       - run: echo "Setting up Key-Val combinations"
