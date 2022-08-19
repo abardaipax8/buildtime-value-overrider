@@ -28,8 +28,6 @@ jobs:
 
       - name: Send to override
         uses: ./
-        env:
-          CONVERTED_JSON: ${{ fromJSON(steps.json_map.outputs.keyVals) }}
         with:
           filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
-          keyValueObject: ${{ env.CONVERTED_JSON }}
+          keyValueObject: ${{ steps.run_outputs.outputs }}
