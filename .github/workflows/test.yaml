@@ -8,6 +8,9 @@ jobs:
     outputs:
       keyValues: ${{ steps.json_map.outputs.keyVals }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
       - name: Create value outputs
         id: run_outputs
         run: |
