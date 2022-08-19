@@ -1,6 +1,12 @@
 name: Test workflow
 
-on: [workflow_dispatch, pull_request]
+on: 
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      addEnvVar:
+        type: boolean
+        description: 'Path of YAML or env file to override'
 
 jobs:
   job1:
@@ -10,7 +16,7 @@ jobs:
       yaml.prop: '///\\\--__...[]=()'
     steps:
       - name: add env var
-        if: false
+        if: ${{ github.events.input.addEnvVar }}
         id: env_var
         run: echo "::set-output name=ENV_VAR::Change again!"
 
