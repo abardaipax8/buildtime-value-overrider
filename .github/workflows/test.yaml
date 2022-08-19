@@ -3,17 +3,11 @@ name: Test workflow
 on:
   workflow_dispatch:
     inputs:
-      p8pClientURL:
-        description: 'P8P URL'
-        default: 'https://cc-nonprod.nonproduction.paxating.com'
-        required: true
+      addVar:
+        required: false
+        description: test var conditions
+        default: false
   pull_request:
-
-inputs:
-  addVar:
-    required: false
-    description: test var conditions
-    default: false
 
 jobs:
   test:
