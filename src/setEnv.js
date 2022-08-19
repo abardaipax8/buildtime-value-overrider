@@ -1,5 +1,4 @@
 const fs = require('fs')
-require('dotenv').config()
 
 module.exports.updateEnvFile = (pathToenvFile, keyValMap) => {
     fs.readFile(pathToenvFile, 'utf8', function (err, data) {
