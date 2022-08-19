@@ -44,5 +44,5 @@ jobs:
     steps:
     - name: Join key and values
       # env:
-      #   JSON: ${{ toJson() }}
-      run: echo ${{ needs.test.outputs.keyValues }}
+      #   JSON: ${{ toJson( }}
+      run: echo $needs.test.outputs.keyValues
