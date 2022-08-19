@@ -23,14 +23,14 @@ jobs:
 
   job2:
     runs-on: ubuntu-latest
-    uses: abardaipax8/buildtime-value-overrider/.github/workflows/anotherWorkflow.yml@test-pr
+    # uses: abardaipax8/buildtime-value-overrider/.github/workflows/anotherWorkflow.yml@test-pr
     needs: job1
     steps:
       - name: Checkout
         uses: actions/checkout@v3
     
       - name: send to mock backend workflow
-        uses: ./.github/workflows/anotherWorkflow.yml
+        uses: ./.github/workflows/anotherWorkflow.yaml
         with:
           filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
           keyValueObject: ${{ toJson(needs.job1.outputs) }}
