@@ -22,7 +22,6 @@ jobs:
         run: echo "::set-output name=ENV_VAR::Change again!"
 
   job2:
-    runs-on: ubuntu-latest
     uses: ./.github/workflows/anotherWorkflow.yaml
     needs: job1
     with:
