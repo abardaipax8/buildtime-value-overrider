@@ -1,4 +1,4 @@
-name: Another workflow to mock being called in backend workflows
+name: Mock BE workflow
 
 on:
   workflow_call:
