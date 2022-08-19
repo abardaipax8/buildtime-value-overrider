@@ -1,4 +1,4 @@
-// const core = require('@actions/core')
+const core = require('@actions/core')
 
 // const path = core.getInput('filePath')
 // const vals = core.getInput('keyValueObject')
