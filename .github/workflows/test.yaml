@@ -32,8 +32,10 @@ jobs:
     outputs:
       ENV_VAR: Hello Vars!
       yaml.prop: '///\\\--__...[]=()'
-      ENV_VAR2: Hello Vars!
     steps:
+      - name: update p8p endpoint
+        if: false
+        run: echo "::set-output name=ENV_VAR44::Hello Vars!"
       - run: echo "Setting up Key-Val combinations"
 
   job2:
