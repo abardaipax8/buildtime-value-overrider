@@ -52,4 +52,4 @@ jobs:
         uses: ./
         with:
           filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
-          keyValueObject: needs.job1.outputs
+          keyValueObject: ${{ toJson(needs.job1.outputs) }}
