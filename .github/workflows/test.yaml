@@ -20,13 +20,6 @@ jobs:
           echo "::set-output name=ENV_VAR3::Hello Vars!"
           echo "::set-output name=ENV_VAR4::Hello Vars!"
 
-      - name: Send to override
-        uses: ./
-        with:
-          filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
-          keyValueObject: ${{ toJson(steps.run_outputs.outputs) }}
-
-
   job1:
     runs-on: ubuntu-latest
     outputs:
@@ -42,7 +35,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
-    - name: Join key and values
-      # env:
-      #   JSON: ${{ toJson( }}
-      run: echo $needs.test.outputs.keyValues
+    
+      - name: Send to override
+        uses: ./
+        with:
+          filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
+          keyValueObject: ${{ toJson(needs.test.outputs.keyValues) }}
