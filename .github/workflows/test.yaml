@@ -7,6 +7,12 @@ on:
       addEnvVar:
         type: boolean
         description: 'Add test env var'
+        default: false
+        required: true
+      filePathh:
+        description: 'mock P8P URL'
+        default: 'https://whatever.com'
+        required: true
 
 jobs:
   job1:
