@@ -6,7 +6,7 @@ on:
     inputs:
       addEnvVar:
         type: boolean
-        description: 'Path of YAML or env file to override'
+        description: 'Add test env var'
 
 jobs:
   job1:
