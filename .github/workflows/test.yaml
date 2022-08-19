@@ -30,7 +30,10 @@ jobs:
       - name: update p8p endpoint
         if: true
         id: single_test
-        run: echo "::set-output name=ENV_VAR::Change please!"
+        run: |
+          if false
+            then echo "::set-output name=ENV_VAR::Change again!"
+          fi
       - run: echo "Setting up Key-Val combinations"
 
   job3:
