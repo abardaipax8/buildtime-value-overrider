@@ -1,6 +1,5 @@
 name: 'Build time value overrider'
 description: 'Overrides values in YAML and env files at build time'
-author: 'Pax8'
 inputs:
   filePath:
     required: false
