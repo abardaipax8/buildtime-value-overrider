@@ -9,10 +9,6 @@ on:
         description: 'Add test env var'
         default: false
         required: true
-      filePath:
-        description: 'mock P8P URL'
-        default: 'https://whatever.com'
-        required: true
 
 jobs:
   job1:
@@ -30,5 +26,5 @@ jobs:
     uses: ./.github/workflows/mock.yaml
     needs: job1
     with:
-      filePath: ${{ github.event.inputs.filePath }}
+      filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
       keyValueObject: ${{ toJson(needs.job1.outputs) }}
