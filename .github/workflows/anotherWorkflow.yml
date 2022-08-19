@@ -1,5 +1,6 @@
 name: Another workflow to mock being called in backend workflows
 
+on: workflow_dispatch
 
 job3:
     runs-on: ubuntu-latest
