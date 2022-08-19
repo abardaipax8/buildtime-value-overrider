@@ -1,0 +1,37 @@
+name: Another workflow to mock being called in backend workflows
+
+on:
+  workflow_call:
+    inputs:
+      filePath:
+        type: string
+        required: true
+        description: 'Path of YAML or env file to override'
+      keyValueObject:
+        type: string
+        required: true
+        description: 'Object of existing keys and values to override existing values'
+
+jobs:
+  job3:
+    runs-on: ubuntu-latest
+    if: true
+    steps:
+      - name: input file path
+        run: echo ${{ inputs.filePath }}
+
+      - name: input key val map
+        run: echo ${{ inputs.keyValueObject }}
+  
+  job4:
+    runs-on: ubuntu-latest
+    if: true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Send to override
+        uses: ./
+        with:
+          filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
+          keyValueObject: ${{ toJson(inputs.keyValueObject) }}

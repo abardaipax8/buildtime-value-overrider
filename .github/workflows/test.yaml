@@ -1,0 +1,23 @@
+name: Test workflow
+
+on: [workflow_dispatch, pull_request]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      ENV_VAR: ${{ steps.env_var.outputs.ENV_VAR }}
+      yaml.prop: '///\\\--__...[]=()'
+    steps:
+      - name: add env var
+        if: false
+        id: env_var
+        run: echo "::set-output name=ENV_VAR::Change again!"
+
+  job2:
+    uses: ./.github/workflows/anotherWorkflow.yaml
+    needs: job1
+    with:
+      filePath: './helm/marketplace-coordinator/environments/nonproduction/application.yaml'
+      keyValueObject: ${{ toJson(needs.job1.outputs) }}
+        
