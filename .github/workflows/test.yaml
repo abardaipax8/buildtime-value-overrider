@@ -1,6 +1,13 @@
 name: Test workflow
 
-on: [workflow_dispatch, pull_request]
+on:
+  workflow_dispatch:
+    inputs:
+      p8pClientURL:
+        description: 'P8P URL'
+        default: 'https://cc-nonprod.nonproduction.paxating.com'
+        required: true
+  pull_request:
 
 inputs:
   addVar:
