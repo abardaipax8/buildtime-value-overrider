@@ -5,14 +5,12 @@ on:
     inputs:
       filePath:
         type: string
-        required: false
+        required: true
         description: 'Path of YAML or env file to override'
-        default: ''
       keyValueObject:
         type: string
-        required: false
+        required: true
         description: 'Object of existing keys and values to override existing values'
-        default: ''
 
 jobs:
   job3:
