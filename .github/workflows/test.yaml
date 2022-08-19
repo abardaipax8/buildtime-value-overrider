@@ -6,7 +6,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     outputs:
-      keyValues: ${{ steps.json_map.outputs.keyVals }}
+      keyValues: ${{ steps.json_map.outputs }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -19,12 +19,6 @@ jobs:
           echo "::set-output name=ENV_VAR2::Hello Vars!"
           echo "::set-output name=ENV_VAR3::Hello Vars!"
           echo "::set-output name=ENV_VAR4::Hello Vars!"
-
-      - name: Join key and values
-        id: json_map
-        env:
-          JSON: ${{ toJson(steps.run_outputs.outputs) }}
-        run: echo "::set-output name=keyVals::$($JSON)"
 
       - name: Send to override
         uses: ./
